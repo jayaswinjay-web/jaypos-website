@@ -3,142 +3,128 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JayPOS — Offline-First POS Software for Indian Retailers</title>
+  <title>JayPOS — Offline POS Software for Indian Retail Stores</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #334155; background: #ffffff; line-height: 1.6; }
-    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #1e2938; background: #f4f5f7; line-height: 1.6; }
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
 
-    /* Nav */
-    nav { position: sticky; top: 0; z-index: 100; background: #ffffff; border-bottom: 1px solid #e2e8f0; }
+    nav { background: #1a1d23; position: sticky; top: 0; z-index: 100; }
     nav .container { display: flex; justify-content: space-between; align-items: center; height: 64px; }
-    nav .logo { font-size: 20px; font-weight: 700; color: #1e293b; text-decoration: none; }
-    nav .logo span { color: #2563eb; }
+    nav .logo { font-size: 20px; font-weight: 700; color: #ffffff; text-decoration: none; }
+    nav .logo span { color: #f59e0b; }
     .nav-links { display: flex; gap: 24px; align-items: center; list-style: none; }
-    .nav-links a { color: #64748b; text-decoration: none; font-size: 14px; font-weight: 500; }
-    .nav-links a:hover { color: #1e293b; }
+    .nav-links a { color: #9ca3af; text-decoration: none; font-size: 14px; font-weight: 500; }
+    .nav-links a:hover { color: #ffffff; }
 
-    /* Buttons */
-    .btn { display: inline-flex; align-items: center; gap: 6px; padding: 10px 24px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 14px; transition: all 0.2s; cursor: pointer; border: none; }
-    .btn-primary { background: #2563eb; color: #ffffff; }
-    .btn-primary:hover { background: #1d4ed8; }
-    .btn-outline { border: 1.5px solid #e2e8f0; color: #334155; background: transparent; }
-    .btn-outline:hover { border-color: #2563eb; color: #2563eb; }
+    .btn { display: inline-flex; align-items: center; gap: 6px; padding: 10px 24px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 14px; transition: all 0.15s; cursor: pointer; border: none; }
+    .btn-amber { background: #f59e0b; color: #1a1d23; }
+    .btn-amber:hover { background: #d97706; }
+    .btn-outline-light { border: 1.5px solid #374151; color: #e5e7eb; background: transparent; }
+    .btn-outline-light:hover { border-color: #f59e0b; color: #f59e0b; }
+    .btn-outline-dark { border: 1.5px solid #d1d5db; color: #374151; background: transparent; }
+    .btn-outline-dark:hover { border-color: #f59e0b; color: #d97706; }
     .btn-lg { padding: 14px 32px; font-size: 15px; }
 
-    /* Hero */
-    .hero { padding: 80px 0 60px; background: #f8fafc; border-bottom: 1px solid #e2e8f0; }
+    .hero { padding: 80px 0 72px; background: #1a1d23; }
     .hero .container { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
     @media (max-width: 900px) { .hero .container { grid-template-columns: 1fr; text-align: center; } }
-    .hero h1 { font-size: 40px; font-weight: 700; color: #1e293b; line-height: 1.15; margin-bottom: 16px; letter-spacing: -0.5px; }
-    .hero h1 span { color: #2563eb; }
-    .hero p { font-size: 16px; color: #64748b; line-height: 1.7; margin-bottom: 28px; max-width: 480px; }
+    .hero h1 { font-size: 40px; font-weight: 800; color: #ffffff; line-height: 1.12; margin-bottom: 16px; letter-spacing: -0.5px; }
+    .hero h1 span { color: #f59e0b; }
+    .hero p { font-size: 16px; color: #9ca3af; line-height: 1.7; margin-bottom: 28px; max-width: 480px; }
     @media (max-width: 900px) { .hero p { max-width: 100%; } .hero h1 { font-size: 32px; } }
     .hero-btns { display: flex; gap: 10px; flex-wrap: wrap; }
     @media (max-width: 900px) { .hero-btns { justify-content: center; } }
-    .hero-badge { display: inline-block; padding: 4px 12px; border-radius: 4px; font-size: 12px; font-weight: 600; background: #dbeafe; color: #1d4ed8; margin-bottom: 20px; }
-
+    .hero-badge { display: inline-block; padding: 4px 12px; border-radius: 4px; font-size: 12px; font-weight: 600; background: #2d323c; color: #f59e0b; margin-bottom: 20px; letter-spacing: 0.3px; }
     .hero-image { text-align: center; }
-    .hero-image img { max-width: 100%; height: auto; border-radius: 12px; border: 1px solid #e2e8f0; box-shadow: 0 4px 24px rgba(0,0,0,0.06); }
+    .hero-image img { max-width: 100%; height: auto; border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); border: 1px solid #2d323c; }
 
-    /* Stats bar */
-    .stats-bar { padding: 32px 0; background: #ffffff; border-bottom: 1px solid #e2e8f0; }
-    .stats-bar .container { display: flex; justify-content: center; gap: 60px; flex-wrap: wrap; }
-    .stats-bar .stat { text-align: center; }
-    .stats-bar .stat .num { font-size: 28px; font-weight: 700; color: #1e293b; }
-    .stats-bar .stat .label { font-size: 13px; color: #64748b; margin-top: 2px; }
+    .sec { padding: 72px 0; }
+    .sec-dark { background: #1a1d23; }
+    .sec-light { background: #f4f5f7; }
+    .sec-white { background: #ffffff; }
+    .sec-header { text-align: center; margin-bottom: 48px; }
+    .sec-header h2 { font-size: 30px; font-weight: 700; margin-bottom: 12px; }
+    .sec-header p { font-size: 15px; max-width: 560px; margin: 0 auto; line-height: 1.7; }
+    .sec-header.light h2 { color: #ffffff; }
+    .sec-header.light p { color: #9ca3af; }
+    .sec-header.dark h2 { color: #1e2938; }
+    .sec-header.dark p { color: #6b7280; }
 
-    /* Sections */
-    .section { padding: 72px 0; }
-    .section-alt { background: #f8fafc; }
-    .section-header { text-align: center; margin-bottom: 48px; }
-    .section-header h2 { font-size: 30px; font-weight: 700; color: #1e293b; margin-bottom: 12px; }
-    .section-header p { font-size: 15px; color: #64748b; max-width: 560px; margin: 0 auto; }
+    .border-b { border-bottom: 1px solid #e5e7eb; }
+    .border-t { border-top: 1px solid #e5e7eb; }
 
-    /* Features */
     .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
     @media (max-width: 900px) { .features-grid { grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 560px) { .features-grid { grid-template-columns: 1fr; } }
-    .feature-card { padding: 28px; border-radius: 8px; border: 1px solid #e2e8f0; background: #ffffff; }
-    .feature-card .icon-wrap { width: 40px; height: 40px; border-radius: 8px; background: #eff6ff; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
-    .feature-card .icon-wrap svg { width: 20px; height: 20px; stroke: #2563eb; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-    .feature-card h3 { font-size: 16px; font-weight: 600; color: #1e293b; margin-bottom: 6px; }
-    .feature-card p { font-size: 13px; color: #64748b; line-height: 1.7; }
+    .fcard { padding: 28px; border-radius: 8px; background: #ffffff; border: 1px solid #e5e7eb; }
+    .fcard .icon { width: 40px; height: 40px; border-radius: 8px; background: #fef3c7; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
+    .fcard .icon svg { width: 20px; height: 20px; stroke: #d97706; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .fcard h3 { font-size: 16px; font-weight: 600; color: #1e2938; margin-bottom: 6px; }
+    .fcard p { font-size: 13px; color: #6b7280; line-height: 1.7; }
 
-    /* How it works */
     .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
     @media (max-width: 800px) { .steps { grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 480px) { .steps { grid-template-columns: 1fr; } }
     .step { text-align: center; padding: 24px; }
-    .step .step-num { width: 40px; height: 40px; border-radius: 50%; background: #2563eb; color: #ffffff; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 700; margin: 0 auto 16px; }
-    .step h3 { font-size: 15px; font-weight: 600; color: #1e293b; margin-bottom: 6px; }
-    .step p { font-size: 13px; color: #64748b; }
+    .step .num { width: 40px; height: 40px; border-radius: 50%; background: #f59e0b; color: #1a1d23; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 700; margin: 0 auto 16px; }
+    .step h3 { font-size: 15px; font-weight: 600; color: #ffffff; margin-bottom: 6px; }
+    .step p { font-size: 13px; color: #9ca3af; }
 
-    /* Screenshots */
-    .screenshots-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
-    @media (max-width: 900px) { .screenshots-grid { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 480px) { .screenshots-grid { grid-template-columns: 1fr; } }
-    .screen-card { border-radius: 8px; overflow: hidden; border: 1px solid #e2e8f0; background: #ffffff; }
-    .screen-card img { width: 100%; display: block; }
-    .screen-card .label { padding: 10px 14px; font-size: 13px; font-weight: 500; color: #475569; border-top: 1px solid #e2e8f0; }
+    .screens-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    @media (max-width: 900px) { .screens-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 480px) { .screens-grid { grid-template-columns: 1fr; } }
+    .scard { border-radius: 8px; overflow: hidden; border: 1px solid #e5e7eb; background: #ffffff; }
+    .scard img { width: 100%; display: block; }
+    .scard .label { padding: 10px 14px; font-size: 13px; font-weight: 500; color: #4b5563; border-top: 1px solid #e5e7eb; background: #f9fafb; }
 
-    /* Pricing */
-    .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 900px; margin: 0 auto; }
+    .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 920px; margin: 0 auto; }
     @media (max-width: 700px) { .pricing-grid { grid-template-columns: 1fr; max-width: 400px; } }
-    .pricing-card { padding: 32px; border-radius: 8px; border: 1px solid #e2e8f0; background: #ffffff; }
-    .pricing-card.featured { border-color: #2563eb; box-shadow: 0 0 0 1px #2563eb; }
-    .pricing-card .plan { font-size: 14px; font-weight: 600; color: #2563eb; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
-    .pricing-card .price { font-size: 36px; font-weight: 700; color: #1e293b; margin-bottom: 4px; }
-    .pricing-card .price span { font-size: 14px; font-weight: 400; color: #64748b; }
-    .pricing-card .desc { font-size: 13px; color: #64748b; margin-bottom: 20px; }
-    .pricing-card ul { list-style: none; padding: 0; margin-bottom: 24px; }
-    .pricing-card ul li { padding: 6px 0; font-size: 13px; color: #475569; border-bottom: 1px solid #f1f5f9; }
-    .pricing-card ul li:last-child { border-bottom: none; }
-    .pricing-card ul li::before { content: "\2713"; color: #2563eb; font-weight: 700; margin-right: 8px; }
+    .pcard { padding: 32px; border-radius: 8px; background: #ffffff; border: 1px solid #e5e7eb; }
+    .pcard.featured { border-color: #f59e0b; box-shadow: 0 0 0 1px #f59e0b; }
+    .pcard .plan { font-size: 14px; font-weight: 600; color: #d97706; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+    .pcard .price { font-size: 36px; font-weight: 700; color: #1e2938; margin-bottom: 4px; }
+    .pcard .price span { font-size: 14px; font-weight: 400; color: #6b7280; }
+    .pcard .desc { font-size: 13px; color: #6b7280; margin-bottom: 20px; }
+    .pcard ul { list-style: none; padding: 0; margin-bottom: 24px; }
+    .pcard ul li { padding: 6px 0; font-size: 13px; color: #4b5563; border-bottom: 1px solid #f3f4f6; }
+    .pcard ul li:last-child { border-bottom: none; }
+    .pcard ul li::before { content: ""; display: inline-block; width: 5px; height: 5px; border-radius: 50%; background: #f59e0b; margin-right: 10px; vertical-align: middle; }
 
-    /* FAQ */
     .faq-list { max-width: 700px; margin: 0 auto; }
-    .faq-item { border-bottom: 1px solid #e2e8f0; padding: 16px 0; }
-    .faq-item:first-child { border-top: 1px solid #e2e8f0; }
-    .faq-item .q { font-size: 15px; font-weight: 600; color: #1e293b; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
-    .faq-item .q::after { content: "+"; font-size: 18px; color: #94a3b8; }
+    .faq-item { border-bottom: 1px solid #e5e7eb; padding: 16px 0; }
+    .faq-item:first-child { border-top: 1px solid #e5e7eb; }
+    .faq-item .q { font-size: 15px; font-weight: 600; color: #1e2938; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+    .faq-item .q::after { content: "+"; font-size: 18px; color: #9ca3af; transition: transform 0.2s; }
     .faq-item.open .q::after { content: "\2212"; }
-    .faq-item .a { font-size: 14px; color: #64748b; padding-top: 8px; display: none; }
+    .faq-item .a { font-size: 14px; color: #6b7280; padding-top: 8px; display: none; line-height: 1.7; }
     .faq-item.open .a { display: block; }
 
-    /* CTA */
-    .cta { padding: 72px 0; background: #1e293b; text-align: center; }
+    .cta { padding: 72px 0; background: #22262e; text-align: center; }
     .cta h2 { font-size: 30px; font-weight: 700; color: #ffffff; margin-bottom: 12px; }
-    .cta p { font-size: 15px; color: #94a3b8; max-width: 480px; margin: 0 auto 24px; }
-    .cta .btn-primary { background: #ffffff; color: #1e293b; }
-    .cta .btn-primary:hover { background: #e2e8f0; }
-    .cta .note { margin-top: 12px; font-size: 13px; color: #475569; }
+    .cta p { font-size: 15px; color: #9ca3af; max-width: 480px; margin: 0 auto 24px; }
+    .cta .btn-amber { font-size: 15px; padding: 14px 36px; }
+    .cta .note { margin-top: 12px; font-size: 13px; color: #6b7280; }
 
-    /* Footer */
-    footer { padding: 48px 0 32px; background: #0f172a; }
+    footer { padding: 48px 0 32px; background: #14161b; }
     .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 32px; }
     @media (max-width: 700px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
     @media (max-width: 480px) { .footer-grid { grid-template-columns: 1fr; } }
     .footer-col h4 { font-size: 14px; font-weight: 600; color: #ffffff; margin-bottom: 12px; }
-    .footer-col p, .footer-col a { font-size: 13px; color: #94a3b8; line-height: 1.8; text-decoration: none; display: block; }
-    .footer-col a:hover { color: #ffffff; }
+    .footer-col p, .footer-col a { font-size: 13px; color: #6b7280; line-height: 1.8; text-decoration: none; display: block; }
+    .footer-col a:hover { color: #f59e0b; }
     .footer-col .logo { font-size: 18px; font-weight: 700; color: #ffffff; margin-bottom: 8px; }
-    .footer-col .logo span { color: #60a5fa; }
-    .footer-bottom { border-top: 1px solid #1e293b; padding-top: 20px; text-align: center; font-size: 13px; color: #475569; }
-
-    /* Utilities */
-    .text-center { text-align: center; }
-    .mt-8 { margin-top: 8px; }
-    .mb-8 { margin-bottom: 8px; }
+    .footer-col .logo span { color: #f59e0b; }
+    .footer-bottom { border-top: 1px solid #22262e; padding-top: 20px; text-align: center; font-size: 13px; color: #4b5563; }
 
     @media (max-width: 700px) {
       .hero { padding: 48px 0 40px; }
-      .section { padding: 48px 0; }
-      .section-header h2 { font-size: 24px; }
-      .pricing-card .price { font-size: 28px; }
+      .sec { padding: 48px 0; }
+      .sec-header h2 { font-size: 24px; }
+      .pcard .price { font-size: 28px; }
     }
   </style>
 </head>
@@ -151,138 +137,132 @@
         <li><a href="#features">Features</a></li>
         <li><a href="#pricing">Pricing</a></li>
         <li><a href="#faq">FAQ</a></li>
-        <li><a href="#download" class="btn btn-primary">Download APK</a></li>
+        <li><a href="#download" class="btn btn-amber">Download APK</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- Hero -->
   <section class="hero">
     <div class="container">
       <div>
         <div class="hero-badge">Offline-First POS for Indian Retailers</div>
-        <h1>Billing, inventory &amp; reporting —<br><span>fully offline, always reliable</span></h1>
-        <p>JayPOS runs completely on your Android device. No internet required for daily operations. Bluetooth thermal printing, GST billing, stock management, and secure cloud backup when connected.</p>
+        <h1>Billing, inventory &amp; reporting &mdash; <br><span>100% offline, always reliable</span></h1>
+        <p>JayPOS runs entirely on your Android device. Scan barcodes, print thermal receipts, generate GST invoices, track stock, and view reports &mdash; no internet needed.</p>
         <div class="hero-btns">
-          <a href="#features" class="btn btn-primary btn-lg">Explore Features</a>
-          <a href="#download" class="btn btn-outline btn-lg">Download APK</a>
+          <a href="#features" class="btn btn-amber btn-lg">Explore Features</a>
+          <a href="#download" class="btn btn-outline-light btn-lg">Download APK</a>
         </div>
       </div>
       <div class="hero-image">
-        <img src="screenshots/billing.jpeg" alt="JayPOS Billing Screen" style="max-width:280px;border-radius:20px;box-shadow:0 8px 32px rgba(0,0,0,0.1)">
+        <img src="screenshots/billing.jpeg" alt="JayPOS billing screen" style="max-width:260px">
       </div>
     </div>
   </section>
 
-  <!-- Stats -->
-  <div class="stats-bar">
-    <div class="container">
-      <div class="stat"><div class="num">100%</div><div class="label">Offline Capable</div></div>
-      <div class="stat"><div class="num">GST</div><div class="label">Compliant Invoices</div></div>
-      <div class="stat"><div class="num">Free</div><div class="label">Trial Period</div></div>
-      <div class="stat"><div class="num">ESC/POS</div><div class="label">Printer Support</div></div>
+  <div style="background:#22262e;border-top:1px solid #2d323c;border-bottom:1px solid #2d323c;padding:28px 0">
+    <div class="container" style="display:flex;justify-content:center;gap:64px;flex-wrap:wrap">
+      <div style="text-align:center"><div style="font-size:22px;font-weight:700;color:#ffffff">100%</div><div style="font-size:13px;color:#6b7280;margin-top:2px">Offline Capable</div></div>
+      <div style="text-align:center"><div style="font-size:22px;font-weight:700;color:#ffffff">GST</div><div style="font-size:13px;color:#6b7280;margin-top:2px">Compliant Invoices</div></div>
+      <div style="text-align:center"><div style="font-size:22px;font-weight:700;color:#ffffff">30 Days</div><div style="font-size:13px;color:#6b7280;margin-top:2px">Free Trial</div></div>
+      <div style="text-align:center"><div style="font-size:22px;font-weight:700;color:#ffffff">ESC/POS</div><div style="font-size:13px;color:#6b7280;margin-top:2px">Printer Support</div></div>
     </div>
   </div>
 
-  <!-- Features -->
-  <section class="section" id="features">
+  <section class="sec sec-light" id="features">
     <div class="container">
-      <div class="section-header">
+      <div class="sec-header dark">
         <h2>Everything you need to run your store</h2>
-        <p>Designed for Indian retail — GST-ready, offline-capable, and simple enough for anyone to use.</p>
+        <p>Built for Indian retail &mdash; GST-ready, offline-capable, and simple enough for anyone to use.</p>
       </div>
       <div class="features-grid">
-        <div class="feature-card">
-          <div class="icon-wrap"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></div>
+        <div class="fcard">
+          <div class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></div>
           <h3>Smart Billing</h3>
-          <p>Fast barcode scanning with auto-product lookup. Split payments, GST invoice generation with QR, and customizable receipt templates.</p>
+          <p>Barcode scanning with auto-product lookup. Split payments, GST invoice generation with QR, and receipt customization.</p>
         </div>
-        <div class="feature-card">
-          <div class="icon-wrap"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></div>
+        <div class="fcard">
+          <div class="icon"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/></svg></div>
           <h3>Inventory Control</h3>
-          <p>Real-time stock tracking, low-stock alerts, variant management, purchase orders, and stock adjustment with expiry date tracking.</p>
+          <p>Real-time stock tracking, low-stock alerts, variant management, purchase orders, and expiry date monitoring.</p>
         </div>
-        <div class="feature-card">
-          <div class="icon-wrap"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+        <div class="fcard">
+          <div class="icon"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
           <h3>Reports &amp; Analytics</h3>
-          <p>Daily sales summaries, profit &amp; loss statements, GST return data, expiry reports, and bestseller analysis — all generated on-device.</p>
+          <p>Daily sales summaries, profit &amp; loss, GST return data, expiry reports, and bestseller analysis on-device.</p>
         </div>
-        <div class="feature-card">
-          <div class="icon-wrap"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+        <div class="fcard">
+          <div class="icon"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
           <h3>Bluetooth Printing</h3>
-          <p>Print thermal receipts directly to any ESC/POS Bluetooth printer. No cloud service or internet required. Fast, reliable, and private.</p>
+          <p>Print thermal receipts to any ESC/POS Bluetooth printer. No cloud or internet needed. Fast, reliable, private.</p>
         </div>
-        <div class="feature-card">
-          <div class="icon-wrap"><svg viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></div>
-          <h3>Offline-First Architecture</h3>
-          <p>All data stored locally using SQLite. The app works 100% offline for billing, inventory, and reporting. Cloud sync happens automatically in the background.</p>
+        <div class="fcard">
+          <div class="icon"><svg viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></div>
+          <h3>Offline-First</h3>
+          <p>SQLite-local data. Works 100% offline for billing, inventory, and reporting. Cloud syncs automatically when online.</p>
         </div>
-        <div class="feature-card">
-          <div class="icon-wrap"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-          <h3>Secure Cloud Backup</h3>
-          <p>Automatic encrypted backup to Supabase cloud. Access your data from the admin dashboard. Never lose a transaction, even if the device is lost.</p>
+        <div class="fcard">
+          <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <h3>Cloud Backup</h3>
+          <p>Encrypted backup to Supabase cloud. Access sales from the admin dashboard. Never lose a transaction.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- How It Works -->
-  <section class="section section-alt">
+  <section class="sec sec-dark">
     <div class="container">
-      <div class="section-header">
+      <div class="sec-header light">
         <h2>How it works</h2>
         <p>Get started in minutes. No training required.</p>
       </div>
       <div class="steps">
         <div class="step">
-          <div class="step-num">1</div>
+          <div class="num">1</div>
           <h3>Install the app</h3>
-          <p>Download the APK, enable installation from unknown sources, and install on any Android device running Android 8 or above.</p>
+          <p>Download the APK and install on any Android device running Android 8 or above. Enable install from unknown sources.</p>
         </div>
         <div class="step">
-          <div class="step-num">2</div>
+          <div class="num">2</div>
           <h3>Set up your shop</h3>
-          <p>Your shop is created by the admin team. Simply log in with the credentials provided to you and start adding products.</p>
+          <p>Your shop is created by the admin team. Log in with provided credentials and start adding products.</p>
         </div>
         <div class="step">
-          <div class="step-num">3</div>
+          <div class="num">3</div>
           <h3>Add products</h3>
-          <p>Add your inventory with barcodes, prices, GST rates, and stock quantities. Use the built-in barcode scanner for fast entry.</p>
+          <p>Add inventory with barcodes, prices, GST rates, and stock quantities. Use the built-in barcode scanner for fast entry.</p>
         </div>
         <div class="step">
-          <div class="step-num">4</div>
+          <div class="num">4</div>
           <h3>Start billing</h3>
-          <p>Scan items, apply discounts, accept split payments, print receipts, and track sales — all from one screen, offline.</p>
+          <p>Scan items, apply discounts, split payments, print receipts, and track sales &mdash; all from one screen, offline.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Screenshots -->
-  <section class="section" id="screens">
+  <section class="sec sec-light" id="screens">
     <div class="container">
-      <div class="section-header">
+      <div class="sec-header dark">
         <h2>App screens</h2>
-        <p>Clean, functional interface designed for fast retail operations.</p>
+        <p>Clean interface designed for fast daily retail operations.</p>
       </div>
-      <div class="screenshots-grid">
-        <div class="screen-card"><img src="screenshots/billing.jpeg" alt="Billing Screen"><div class="label">Billing</div></div>
-        <div class="screen-card"><img src="screenshots/inventory.jpeg" alt="Inventory"><div class="label">Inventory</div></div>
-        <div class="screen-card"><img src="screenshots/reports.jpeg" alt="Reports"><div class="label">Reports</div></div>
-        <div class="screen-card"><img src="screenshots/dashboard.jpeg" alt="Dashboard"><div class="label">Dashboard</div></div>
+      <div class="screens-grid">
+        <div class="scard"><img src="screenshots/billing.jpeg" alt="Billing"><div class="label">Billing</div></div>
+        <div class="scard"><img src="screenshots/inventory.jpeg" alt="Inventory"><div class="label">Inventory</div></div>
+        <div class="scard"><img src="screenshots/reports.jpeg" alt="Reports"><div class="label">Reports</div></div>
+        <div class="scard"><img src="screenshots/dashboard.jpeg" alt="Dashboard"><div class="label">Dashboard</div></div>
       </div>
     </div>
   </section>
 
-  <!-- Pricing -->
-  <section class="section section-alt" id="pricing">
+  <section class="sec sec-white border-t border-b" id="pricing">
     <div class="container">
-      <div class="section-header">
+      <div class="sec-header dark">
         <h2>Simple, transparent pricing</h2>
         <p>Start free. Upgrade when you grow.</p>
       </div>
       <div class="pricing-grid">
-        <div class="pricing-card">
+        <div class="pcard">
           <div class="plan">Starter</div>
           <div class="price">Free <span>/ month</span></div>
           <div class="desc">For small shops getting started with digital billing.</div>
@@ -293,11 +273,11 @@
             <li>Bluetooth printing</li>
             <li>Cloud backup (1 GB)</li>
           </ul>
-          <a href="#download" class="btn btn-outline" style="width:100%;text-align:center;justify-content:center">Get Started</a>
+          <a href="#download" class="btn btn-outline-dark" style="width:100%;justify-content:center">Get Started</a>
         </div>
-        <div class="pricing-card featured">
+        <div class="pcard featured">
           <div class="plan">Professional</div>
-          <div class="price">499 <span>/ month</span></div>
+          <div class="price">&#8377;499 <span>/ month</span></div>
           <div class="desc">For growing stores with advanced needs.</div>
           <ul>
             <li>Everything in Starter</li>
@@ -307,9 +287,9 @@
             <li>Cloud backup (10 GB)</li>
             <li>Priority support</li>
           </ul>
-          <a href="#download" class="btn btn-primary" style="width:100%;text-align:center;justify-content:center">Start Free Trial</a>
+          <a href="#download" class="btn btn-amber" style="width:100%;justify-content:center">Start Free Trial</a>
         </div>
-        <div class="pricing-card">
+        <div class="pcard">
           <div class="plan">Enterprise</div>
           <div class="price">Custom</div>
           <div class="desc">For chains and large retail operations.</div>
@@ -321,61 +301,58 @@
             <li>Unlimited cloud backup</li>
             <li>24/7 phone support</li>
           </ul>
-          <a href="mailto:sales@jaypos.com" class="btn btn-outline" style="width:100%;text-align:center;justify-content:center">Contact Sales</a>
+          <a href="mailto:sales@jaypos.com" class="btn btn-outline-dark" style="width:100%;justify-content:center">Contact Sales</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FAQ -->
-  <section class="section" id="faq">
+  <section class="sec sec-light" id="faq">
     <div class="container">
-      <div class="section-header">
+      <div class="sec-header dark">
         <h2>Frequently asked questions</h2>
         <p>Common questions about JayPOS.</p>
       </div>
       <div class="faq-list">
         <div class="faq-item">
           <div class="q">Does JayPOS require internet to work?</div>
-          <div class="a">No. JayPOS is built as an offline-first application. Billing, inventory management, reporting, and printing all work without any internet connection. Cloud sync happens automatically in the background when internet becomes available.</div>
+          <div class="a">No. JayPOS is built as an offline-first application. Billing, inventory, reporting, and printing all work without any internet. Cloud sync happens automatically in the background when internet becomes available.</div>
         </div>
         <div class="faq-item">
           <div class="q">What printers are supported?</div>
-          <div class="a">JayPOS supports any ESC/POS Bluetooth thermal printer. Most 58mm and 80mm thermal printers available in India work out of the box. The app auto-discovers paired Bluetooth printers.</div>
+          <div class="a">JayPOS supports any ESC/POS Bluetooth thermal printer. Most 58mm and 80mm thermal printers available in India work out of the box.</div>
         </div>
         <div class="faq-item">
           <div class="q">Is my data safe and backed up?</div>
-          <div class="a">Yes. All data is stored locally on your device and automatically synced to Supabase cloud when online. The sync is encrypted and your data is accessible only to you via the admin dashboard.</div>
+          <div class="a">Yes. All data is stored locally and synced to Supabase cloud when online. The sync is encrypted. You can access your data via the admin dashboard.</div>
         </div>
         <div class="faq-item">
           <div class="q">Can I use JayPOS on multiple devices?</div>
-          <div class="a">The Professional plan supports multi-user access. Each staff member can log in with their own credentials and access the same shop data. Changes sync across devices seamlessly.</div>
+          <div class="a">Yes. The Professional plan supports multi-user access. Each staff member logs in with their own credentials and accesses the same shop data.</div>
         </div>
         <div class="faq-item">
           <div class="q">How do I get started?</div>
-          <div class="a">Download the APK from this website, install it on your Android device, and contact the admin team to set up your shop credentials. Once logged in, you can start adding products and billing immediately.</div>
+          <div class="a">Download the APK, install it on your Android device, and contact the admin team to set up your shop credentials. Start adding products and billing immediately.</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
   <section class="cta" id="download">
     <div class="container">
       <h2>Get JayPOS today</h2>
       <p>Free trial. No credit card required. Download and start billing in minutes.</p>
-      <a href="https://iyrmmabzasmfovohbgti.supabase.co/storage/v1/object/public/website/app-release.apk" class="btn btn-primary btn-lg">Download APK (29 MB)</a>
+      <a href="https://iyrmmabzasmfovohbgti.supabase.co/storage/v1/object/public/website/app-release.apk" class="btn btn-amber">Download APK (29 MB)</a>
       <p class="note">Android 8+ required. Enable "Install from unknown sources" in Settings.</p>
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
     <div class="container">
       <div class="footer-grid">
         <div class="footer-col">
           <div class="logo">Jay<span>POS</span></div>
-          <p>Offline-first POS software for Indian retailers. Billing, inventory, reporting — fully offline, always reliable.</p>
+          <p>Offline-first POS software for Indian retailers. Billing, inventory, reporting &mdash; fully offline, always reliable.</p>
         </div>
         <div class="footer-col">
           <h4>Product</h4>
@@ -406,10 +383,9 @@
   </footer>
 
   <script>
-    document.querySelectorAll('.faq-item .q').forEach(item => {
-      item.addEventListener('click', () => {
-        const parent = item.parentElement;
-        parent.classList.toggle('open');
+    document.querySelectorAll('.faq-item .q').forEach(function(item) {
+      item.addEventListener('click', function() {
+        this.parentElement.classList.toggle('open');
       });
     });
   </script>
