@@ -4,6 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>JayPOS — Offline POS Software for Indian Retail Stores</title>
+  <meta name="description" content="100% offline POS for Indian retailers. Billing, inventory, GST invoices, Bluetooth printing — runs entirely on your Android device.">
+  <meta name="keywords" content="POS, billing software, inventory management, GST billing, offline POS, Indian retail, Android POS">
+  <meta property="og:title" content="JayPOS — Offline POS for Indian Retail">
+  <meta property="og:description" content="100% offline POS. Billing, inventory, GST — runs entirely on Android.">
+  <meta property="og:url" content="https://jayaswinjay-web.github.io/jaypos-website/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
@@ -14,10 +19,11 @@
 
     nav { background: #1a1d23; position: sticky; top: 0; z-index: 100; }
     nav .container { display: flex; justify-content: space-between; align-items: center; height: 64px; position: relative; }
-    nav .logo { font-size: 20px; font-weight: 700; color: #ffffff; text-decoration: none; z-index: 101; }
+    nav .logo { font-size: 20px; font-weight: 700; color: #ffffff; text-decoration: none; z-index: 101; display: flex; align-items: center; gap: 8px; }
     nav .logo span { color: #f59e0b; }
+    nav .logo .badge { font-size: 10px; font-weight: 600; background: #2d323c; color: #9ca3af; padding: 2px 7px; border-radius: 4px; letter-spacing: 0.3px; }
     .nav-links { display: flex; gap: 24px; align-items: center; list-style: none; }
-    .nav-links a { color: #9ca3af; text-decoration: none; font-size: 14px; font-weight: 500; padding: 8px 0; }
+    .nav-links a { color: #9ca3af; text-decoration: none; font-size: 14px; font-weight: 500; padding: 8px 0; transition: color 0.15s; }
     .nav-links a:hover { color: #ffffff; }
 
     .menu-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; z-index: 101; }
@@ -42,6 +48,7 @@
     .btn-outline-dark { border: 1.5px solid #d1d5db; color: #374151; background: transparent; }
     .btn-outline-dark:hover { border-color: #f59e0b; color: #d97706; }
     .btn-lg { padding: 14px 32px; font-size: 15px; }
+    .btn .icon-sm { width: 16px; height: 16px; }
 
     .hero { padding: 80px 0 72px; background: #1a1d23; overflow: hidden; }
     .hero .container { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
@@ -75,7 +82,8 @@
     .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
     @media (max-width: 900px) { .features-grid { grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 560px) { .features-grid { grid-template-columns: 1fr; } }
-    .fcard { padding: 28px; border-radius: 8px; background: #ffffff; border: 1px solid #e5e7eb; }
+    .fcard { padding: 28px; border-radius: 8px; background: #ffffff; border: 1px solid #e5e7eb; transition: transform 0.2s, box-shadow 0.2s; }
+    .fcard:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
     .fcard .icon { width: 40px; height: 40px; border-radius: 8px; background: #fef3c7; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
     .fcard .icon svg { width: 20px; height: 20px; stroke: #d97706; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
     .fcard h3 { font-size: 16px; font-weight: 600; color: #1e2938; margin-bottom: 6px; }
@@ -124,6 +132,17 @@
     .cta .btn-amber { font-size: 15px; padding: 14px 36px; }
     .cta .note { margin-top: 12px; font-size: 13px; color: #6b7280; }
 
+    .download-info { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; margin: 16px 0 24px; }
+    .download-info .chip { display: flex; align-items: center; gap: 5px; padding: 6px 14px; border-radius: 20px; background: #2d323c; font-size: 13px; color: #9ca3af; }
+    .download-info .chip b { color: #e5e7eb; font-weight: 500; }
+    .download-info .chip svg { width: 14px; height: 14px; stroke: #f59e0b; fill: none; stroke-width: 2; }
+
+    .changelog { max-width: 640px; margin: 40px auto 0; text-align: left; padding: 24px; border-radius: 8px; background: #2d323c; }
+    .changelog h4 { font-size: 13px; font-weight: 600; color: #f59e0b; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px; }
+    .changelog ul { list-style: none; }
+    .changelog ul li { font-size: 13px; color: #9ca3af; padding: 5px 0; display: flex; gap: 8px; align-items: flex-start; }
+    .changelog ul li::before { content: ""; display: inline-block; width: 5px; height: 5px; border-radius: 50%; background: #f59e0b; margin-top: 7px; flex-shrink: 0; }
+
     footer { padding: 48px 0 32px; background: #14161b; }
     .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 32px; }
     @media (max-width: 700px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
@@ -147,17 +166,21 @@
       .hero p { font-size: 14px; }
       .faq-item .q { font-size: 14px; }
       .step { padding: 16px 0; }
+      .download-info { gap: 12px; }
       .mobile-download { display: flex; position: fixed; bottom: 0; left: 0; right: 0; background: #1a1d23; border-top: 1px solid #2d323c; padding: 12px 16px; z-index: 99; }
       .mobile-download .btn { flex: 1; justify-content: center; font-size: 15px; padding: 14px; }
       body { padding-bottom: 72px; }
     }
+
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
   </style>
 </head>
 <body>
 
   <nav>
     <div class="container">
-      <a href="#" class="logo">Jay<span>POS</span></a>
+      <a href="#" class="logo">Jay<span>POS</span> <span class="badge">v1.0.0</span></a>
       <button class="menu-toggle" aria-label="Toggle menu">
         <span></span><span></span><span></span>
       </button>
@@ -203,32 +226,32 @@
         <p>Built for Indian retail &mdash; GST-ready, offline-capable, and simple enough for anyone to use.</p>
       </div>
       <div class="features-grid">
-        <div class="fcard">
+        <div class="fcard reveal">
           <div class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></div>
           <h3>Smart Billing</h3>
           <p>Barcode scanning with auto-product lookup. Split payments, GST invoice generation with QR, and receipt customization.</p>
         </div>
-        <div class="fcard">
+        <div class="fcard reveal">
           <div class="icon"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/></svg></div>
           <h3>Inventory Control</h3>
           <p>Real-time stock tracking, low-stock alerts, variant management, purchase orders, and expiry date monitoring.</p>
         </div>
-        <div class="fcard">
+        <div class="fcard reveal">
           <div class="icon"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
           <h3>Reports &amp; Analytics</h3>
           <p>Daily sales summaries, profit &amp; loss, GST return data, expiry reports, and bestseller analysis on-device.</p>
         </div>
-        <div class="fcard">
+        <div class="fcard reveal">
           <div class="icon"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
           <h3>Bluetooth Printing</h3>
           <p>Print thermal receipts to any ESC/POS Bluetooth printer. No cloud or internet needed. Fast, reliable, private.</p>
         </div>
-        <div class="fcard">
+        <div class="fcard reveal">
           <div class="icon"><svg viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></div>
           <h3>Offline-First</h3>
           <p>SQLite-local data. Works 100% offline for billing, inventory, and reporting. Cloud syncs automatically when online.</p>
         </div>
-        <div class="fcard">
+        <div class="fcard reveal">
           <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
           <h3>Cloud Backup</h3>
           <p>Encrypted backup to Supabase cloud. Access sales from the admin dashboard. Never lose a transaction.</p>
@@ -244,22 +267,22 @@
         <p>Get started in minutes. No training required.</p>
       </div>
       <div class="steps">
-        <div class="step">
+        <div class="step reveal">
           <div class="num">1</div>
           <h3>Install the app</h3>
           <p>Download the APK and install on any Android device running Android 8 or above. Enable install from unknown sources.</p>
         </div>
-        <div class="step">
+        <div class="step reveal">
           <div class="num">2</div>
           <h3>Set up your shop</h3>
           <p>Your shop is created by the admin team. Log in with provided credentials and start adding products.</p>
         </div>
-        <div class="step">
+        <div class="step reveal">
           <div class="num">3</div>
           <h3>Add products</h3>
           <p>Add inventory with barcodes, prices, GST rates, and stock quantities. Use the built-in barcode scanner for fast entry.</p>
         </div>
-        <div class="step">
+        <div class="step reveal">
           <div class="num">4</div>
           <h3>Start billing</h3>
           <p>Scan items, apply discounts, split payments, print receipts, and track sales &mdash; all from one screen, offline.</p>
@@ -275,10 +298,10 @@
         <p>Clean interface designed for fast daily retail operations.</p>
       </div>
       <div class="screens-grid">
-        <div class="scard"><img src="screenshots/billing.jpeg" alt="Billing"><div class="label">Billing</div></div>
-        <div class="scard"><img src="screenshots/inventory.jpeg" alt="Inventory"><div class="label">Inventory</div></div>
-        <div class="scard"><img src="screenshots/reports.jpeg" alt="Reports"><div class="label">Reports</div></div>
-        <div class="scard"><img src="screenshots/dashboard.jpeg" alt="Dashboard"><div class="label">Dashboard</div></div>
+        <div class="scard reveal"><img src="screenshots/billing.jpeg" alt="Billing"><div class="label">Billing</div></div>
+        <div class="scard reveal"><img src="screenshots/inventory.jpeg" alt="Inventory"><div class="label">Inventory</div></div>
+        <div class="scard reveal"><img src="screenshots/reports.jpeg" alt="Reports"><div class="label">Reports</div></div>
+        <div class="scard reveal"><img src="screenshots/dashboard.jpeg" alt="Dashboard"><div class="label">Dashboard</div></div>
       </div>
     </div>
   </section>
@@ -360,7 +383,7 @@
         </div>
         <div class="faq-item">
           <div class="q">How do I get started?</div>
-          <div class="a">Download the APK, install it on your Android device, and contact the admin team to set up your shop credentials. Start adding products and billing immediately.</div>
+          <div class="a">Download the APK, install it on your Android device, contact the admin team to set up your shop credentials. Start adding products and billing immediately.</div>
         </div>
       </div>
     </div>
@@ -370,13 +393,34 @@
     <div class="container">
       <h2>Get JayPOS today</h2>
       <p>Free trial. No credit card required. Download and start billing in minutes.</p>
-      <a href="https://iyrmmabzasmfovohbgti.supabase.co/storage/v1/object/public/website/app-release.apk" class="btn btn-amber">Download APK (29 MB)</a>
-      <p class="note">Android 8+ required. Enable "Install from unknown sources" in Settings.</p>
+      <div class="download-info">
+        <span class="chip"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Updated <b>June 27, 2026</b></span>
+        <span class="chip"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg> v<b>1.0.0</b></span>
+        <span class="chip"><svg viewBox="0 0 24 24"><box width="18" height="18" x="3" y="3" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/></svg> <b>79 MB</b></span>
+        <span class="chip"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg> Android <b>8+</b></span>
+      </div>
+      <a href="apk/jaypos-v1.0.0.apk" class="btn btn-amber" download>Download APK (v1.0.0 &middot; 79 MB)</a>
+      <p class="note">Enable "Install from unknown sources" in Settings &middot; 82 MB on disk</p>
+      <div class="changelog reveal">
+        <h4>What's New in v1.0.0</h4>
+        <ul>
+          <li>Coupon discount support with coupon code redemption</li>
+          <li>Quick bill with cash / UPI QR / card payment options</li>
+          <li>Dashboard with weekly sales chart and stat cards</li>
+          <li>Advanced reports with GST summary and CSV exports</li>
+          <li>Avg/day calculation fixed in sales reports</li>
+          <li>Optimized for Samsung devices with safe area handling</li>
+          <li>Bluetooth thermal printing for receipts</li>
+          <li>Offline-first architecture with Supabase cloud backup</li>
+          <li>Barcode scanning with auto product lookup</li>
+          <li>Low stock alerts and expiry tracking</li>
+        </ul>
+      </div>
     </div>
   </section>
 
   <div class="mobile-download">
-    <a href="https://iyrmmabzasmfovohbgti.supabase.co/storage/v1/object/public/website/app-release.apk" class="btn btn-amber">Download JayPOS APK (29 MB)</a>
+    <a href="apk/jaypos-v1.0.0.apk" class="btn btn-amber" download>Download JayPOS v1.0.0 (79 MB)</a>
   </div>
 
   <footer>
@@ -390,7 +434,7 @@
           <h4>Product</h4>
           <a href="#features">Features</a>
           <a href="#pricing">Pricing</a>
-          <a href="#download">Download</a>
+          <a href="#download">Download v1.0.0</a>
           <a href="#faq">FAQ</a>
         </div>
         <div class="footer-col">
@@ -430,6 +474,10 @@
         this.parentElement.classList.toggle('open');
       });
     });
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
   </script>
 
 </body>
